@@ -1,6 +1,15 @@
-# diseno
+# Diseño:
 
-A new Flutter project.
+un proyecto de flutter para aprender a diseñar apps.
+
+#verciones
+0.01 pagina básica para iniciar el proyecto.
+
+#Notas:
+
+si hay errores en la compilacion o renderizacion los pondre en la seccion de bugs.
+
+##Bugs
 
 ## Getting Started
 
