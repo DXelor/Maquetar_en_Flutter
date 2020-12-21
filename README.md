@@ -2,10 +2,10 @@
 
 un proyecto de flutter para aprender a diseñar apps.
 
-#verciones
+# verciones:
 0.01 pagina básica para iniciar el proyecto.
 
-#Notas:
+# Notas:
 
 si hay errores en la compilacion o renderizacion los pondre en la seccion de bugs.
 
