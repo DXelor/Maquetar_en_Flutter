@@ -9,7 +9,7 @@ un proyecto de flutter para aprender a diseñar apps.
 
 si hay errores en la compilacion o renderizacion los pondre en la seccion de bugs.
 
-##Bugs
+## Bugs
 
 ## Getting Started
 
