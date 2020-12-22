@@ -12,14 +12,38 @@ class ScrollPage extends StatelessWidget {
   }
 }
 
-_pagina1() {
-  return Center(
-    child: Text('pagina 1'),
+//===========↓↓ Pagina 1 ↓↓===========
+Widget _pagina1() {
+  return Stack(
+    children: [_colorFondo(), _imagenFondo()],
   );
 }
 
-_pagina2() {
-  return Center(
-    child: Text('pagina 2'),
+Widget _colorFondo() {
+  return Container(
+    width: double.infinity,
+    height: double.infinity,
+    color: Color.fromRGBO(90, 192, 210, 1.0),
   );
 }
+
+Widget _imagenFondo() {
+  return Container(
+    width: double.infinity,
+    height: double.infinity,
+    child: Image(
+      image: AssetImage('assets/scroll.png'),
+      fit: BoxFit.cover,
+    ),
+  );
+}
+
+//===========↑↑ Pagina 1 ↑↑===========
+//====================================
+//===========↓↓ Pagina 2 ↓↓===========
+_pagina2() {
+  return Center(
+    child: Image(image: AssetImage('assets/scroll.png')),
+  );
+}
+//===========↑↑ Pagina 2 ↑↑===========
