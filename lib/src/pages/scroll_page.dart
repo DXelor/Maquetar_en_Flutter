@@ -69,8 +69,21 @@ _textos() {
 //====================================
 //===========↓↓ Pagina 2 ↓↓===========
 _pagina2() {
-  return Center(
-    child: Image(image: AssetImage('assets/scroll.png')),
+  return Container(
+    width: double.infinity,
+    height: double.infinity,
+    color: Color.fromRGBO(90, 192, 210, 1.0),
+    child: Center(
+      child: RaisedButton(
+        shape: StadiumBorder(),
+        color: Colors.deepPurple,
+        textColor: Colors.white,
+        child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+            child: Text('Bienvenido')),
+        onPressed: () {},
+      ),
+    ),
   );
 }
 //===========↑↑ Pagina 2 ↑↑===========
