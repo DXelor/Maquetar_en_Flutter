@@ -9,32 +9,71 @@ class BasicPage extends StatelessWidget {
     return Scaffold(
         body: Column(
       children: [
-        Image(
-            image: NetworkImage(
-                'https://www.tom-archer.com/wp-content/uploads/2018/06/milford-sound-night-fine-art-photography-new-zealand.jpg')),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 60.0, vertical: 20.0),
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('PurpurinaStars', style: estiloTitulo),
-                    SizedBox(height: 6.5),
-                    Text('atardecer con cielo purpura', style: estiloSubTitulo),
-                  ],
-                ),
-              ),
-              Icon(Icons.star, color: Colors.amber, size: 25.0),
-              Text(
-                '41',
-                style: TextStyle(fontSize: 18.0),
-              )
-            ],
-          ),
-        )
+        _crearImagen(),
+        _crearTitulo(),
+        _crearAcciones(),
       ],
     ));
+  }
+
+  Widget _crearImagen() {
+    return Image(
+        image: NetworkImage(
+            'https://www.tom-archer.com/wp-content/uploads/2018/06/milford-sound-night-fine-art-photography-new-zealand.jpg'));
+  }
+
+  Widget _crearTitulo() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 60.0, vertical: 20.0),
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('PurpurinaStars', style: estiloTitulo),
+                SizedBox(height: 6.5),
+                Text('atardecer con cielo purpura', style: estiloSubTitulo),
+              ],
+            ),
+          ),
+          Icon(Icons.star, color: Colors.amber, size: 25.0),
+          Text(
+            '41',
+            style: TextStyle(fontSize: 18.0),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget _crearAcciones() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        _accion(Icons.call, 'CALL'),
+        _accion(Icons.near_me, 'ROUTE'),
+        _accion(Icons.share, 'SHARE')
+      ],
+    );
+  }
+
+  //Widget para crear acciones ↑↓
+  Widget _accion(IconData icon, String texto) {
+    return Column(
+      children: [
+        Icon(
+          icon,
+          color: Colors.amber,
+        ),
+        SizedBox(
+          height: 5.0,
+        ),
+        Text(
+          texto,
+          style: TextStyle(fontSize: 15.0, color: Colors.blue),
+        )
+      ],
+    );
   }
 }
