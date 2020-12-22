@@ -7,43 +7,56 @@ class BasicPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        _crearImagen(),
-        _crearTitulo(),
-        _crearAcciones(),
-        _crearTexto()
-      ],
+        body: SingleChildScrollView(
+      child: Column(
+        children: [
+          _crearImagen(),
+          _crearTitulo(),
+          _crearAcciones(),
+          _crearTexto(),
+          _crearTexto(),
+          _crearTexto(),
+          _crearTexto(),
+          _crearTexto(),
+        ],
+      ),
     ));
   }
 
   Widget _crearImagen() {
-    return Image(
+    return Container(
+      width: double.infinity,
+      child: Image(
         image: NetworkImage(
-            'https://www.tom-archer.com/wp-content/uploads/2018/06/milford-sound-night-fine-art-photography-new-zealand.jpg'));
+            'https://www.tom-archer.com/wp-content/uploads/2018/06/milford-sound-night-fine-art-photography-new-zealand.jpg'),
+        fit: BoxFit.cover,
+      ),
+    );
   }
 
   Widget _crearTitulo() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 60.0, vertical: 20.0),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('PurpurinaStars', style: estiloTitulo),
-                SizedBox(height: 6.5),
-                Text('atardecer con cielo purpura', style: estiloSubTitulo),
-              ],
+    return SafeArea(
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 60.0, vertical: 20.0),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('PurpurinaStars', style: estiloTitulo),
+                  SizedBox(height: 6.5),
+                  Text('atardecer con cielo purpura', style: estiloSubTitulo),
+                ],
+              ),
             ),
-          ),
-          Icon(Icons.star, color: Colors.amber, size: 25.0),
-          Text(
-            '41',
-            style: TextStyle(fontSize: 18.0),
-          )
-        ],
+            Icon(Icons.star, color: Colors.amber, size: 25.0),
+            Text(
+              '41',
+              style: TextStyle(fontSize: 18.0),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -80,7 +93,7 @@ class BasicPage extends StatelessWidget {
 
   Widget _crearTexto() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+      padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 10.0),
       child: Text(
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
         textAlign: TextAlign.justify,
