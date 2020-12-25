@@ -10,7 +10,7 @@ class BotonesPage extends StatelessWidget {
             _fondoApp(),
             SingleChildScrollView(
               child: Column(
-                children: [_titulos()],
+                children: [_titulos(), _botonesRedondeados()],
               ),
             )
           ],
@@ -18,7 +18,7 @@ class BotonesPage extends StatelessWidget {
         bottomNavigationBar: _bottomNavigationBar(context));
   }
 
-//=================== ↓↓ Fondo ↓↓ ===================
+//======================== ↓↓ Fondo ↓↓ ========================
   _fondoApp() {
     final gradiente = Container(
       width: double.infinity,
@@ -28,7 +28,7 @@ class BotonesPage extends StatelessWidget {
               begin: FractionalOffset(0.0, 0.5),
               end: FractionalOffset(0.0, 1.0),
               colors: [
-            Color.fromRGBO(62, 64, 101, 1.0),
+            Color.fromRGBO(45, 155, 155, 1.0),
             Color.fromRGBO(25, 27, 47, 1.0)
           ])),
     );
@@ -52,9 +52,9 @@ class BotonesPage extends StatelessWidget {
     );
   }
 
-//=================== ↑↑ Fondo ↑↑ ===================
-//===================================================
-//=================== ↓↓ Titulo ↓↓ ==================
+//======================== ↑↑ Fondo ↑↑ ========================
+//=============================================================
+//======================== ↓↓ Titulo ↓↓ =======================
   _titulos() {
     return SafeArea(
       child: Container(
@@ -79,8 +79,10 @@ class BotonesPage extends StatelessWidget {
       ),
     );
   }
-//=================== ↑↑ Titulo ↑↑ ==================
 
+//======================== ↑↑ Titulo ↑↑ =======================
+//=============================================================
+//================= ↓↓ barra de navegacion ↓↓ =================
   _bottomNavigationBar(BuildContext context) {
     return Theme(
       data: Theme.of(context).copyWith(
@@ -102,4 +104,71 @@ class BotonesPage extends StatelessWidget {
       ),
     );
   }
+
+//================= ↑↑ barra de navegacion ↑↑ =================
+//=============================================================
+//=================== ↓↓ cajas del body ↓↓ ====================
+  _botonesRedondeados() {
+    return Table(
+      children: [
+        TableRow(children: [_crearBotonRedondeado(), _crearBotonRedondeado()]),
+        TableRow(children: [_crearBotonRedondeado(), _crearBotonRedondeado()]),
+        TableRow(children: [_crearBotonRedondeado(), _crearBotonRedondeado()]),
+        TableRow(children: [_crearBotonRedondeado(), _crearBotonRedondeado()]),
+        TableRow(children: [_crearBotonRedondeado(), _crearBotonRedondeado()]),
+        TableRow(children: [_crearBotonRedondeado(), _crearBotonRedondeado()])
+      ],
+    );
+  }
+
+  _crearBotonRedondeado() {
+    return Container(
+      height: 180.0,
+      margin: EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: const Alignment(0.0, -0.5),
+          end: const Alignment(0.0, 0.6),
+          colors: <Color>[
+            const Color.fromRGBO(2, 20, 140, 0.6),
+            const Color.fromRGBO(0, 0, 60, 0.3)
+          ],
+        ),
+        borderRadius: BorderRadius.circular(20.0),
+        boxShadow: [
+          BoxShadow(
+            color: const Color.fromRGBO(0, 0, 0, 0.3),
+            offset: Offset(0, 2),
+            blurRadius: 4,
+          ),
+          BoxShadow(
+            color: const Color.fromRGBO(0, 0, 0, 0.3),
+            offset: Offset(0, 6),
+            blurRadius: 20,
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          SizedBox(height: 5.0),
+          CircleAvatar(
+            backgroundColor: Colors.purple,
+            radius: 35.0,
+            child: Icon(
+              Icons.swap_calls,
+              color: Colors.white,
+              size: 30.0,
+            ),
+          ),
+          Text(
+            'data',
+            style: TextStyle(color: Colors.purple),
+          ),
+          SizedBox(height: 5.0)
+        ],
+      ),
+    );
+  }
+//=================== ↑↑ cajas del body ↑↑ ====================
 }
