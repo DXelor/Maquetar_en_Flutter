@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'dart:math';
 
@@ -111,64 +113,94 @@ class BotonesPage extends StatelessWidget {
   _botonesRedondeados() {
     return Table(
       children: [
-        TableRow(children: [_crearBotonRedondeado(), _crearBotonRedondeado()]),
-        TableRow(children: [_crearBotonRedondeado(), _crearBotonRedondeado()]),
-        TableRow(children: [_crearBotonRedondeado(), _crearBotonRedondeado()]),
-        TableRow(children: [_crearBotonRedondeado(), _crearBotonRedondeado()]),
-        TableRow(children: [_crearBotonRedondeado(), _crearBotonRedondeado()]),
-        TableRow(children: [_crearBotonRedondeado(), _crearBotonRedondeado()])
+        TableRow(children: [
+          _crearBotonRedondeado(Colors.cyan, Icons.dashboard, 'Menu'),
+          _crearBotonRedondeado(Color.fromRGBO(240, 200, 10, 1.0),
+              Icons.directions_bus, 'Transporte')
+        ]),
+        TableRow(children: [
+          _crearBotonRedondeado(
+              Colors.pinkAccent, Icons.shopping_bag, 'Compras'),
+          _crearBotonRedondeado(Colors.green, Icons.account_balance, 'Banca')
+        ]),
+        TableRow(children: [
+          _crearBotonRedondeado(Colors.blue, Icons.sports_esports, 'Juegos'),
+          _crearBotonRedondeado(Colors.brown, Icons.mediation, 'Memes')
+        ]),
+        TableRow(children: [
+          _crearBotonRedondeado(
+              Colors.blueGrey, Icons.handyman, 'Cofiguración'),
+          _crearBotonRedondeado(Colors.red, Icons.mail, 'Gmail')
+        ]),
+        TableRow(children: [
+          _crearBotonRedondeado(
+              Color.fromRGBO(110, 150, 200, 1.0), Icons.filter_drama, 'Cloud'),
+          _crearBotonRedondeado(
+              Color.fromRGBO(197, 222, 11, 1.0), Icons.access_alarm, 'Alarm')
+        ]),
+        TableRow(children: [
+          _crearBotonRedondeado(
+              Color.fromRGBO(197, 222, 11, 1.0), Icons.access_alarm, 'Twitter'),
+          _crearBotonRedondeado(
+              Color.fromRGBO(11, 222, 127, 1.0), Icons.access_alarm, 'Camara')
+        ])
       ],
     );
   }
 
-  _crearBotonRedondeado() {
+  _crearBotonRedondeado(Color color, IconData icono, String texto) {
     return Container(
-      height: 180.0,
-      margin: EdgeInsets.all(15.0),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: const Alignment(0.0, -0.5),
-          end: const Alignment(0.0, 0.6),
-          colors: <Color>[
-            const Color.fromRGBO(2, 20, 140, 0.6),
-            const Color.fromRGBO(0, 0, 60, 0.3)
+        height: 180.0,
+        margin: EdgeInsets.all(15.0),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: const Alignment(0.0, -0.5),
+            end: const Alignment(0.0, 0.6),
+            colors: <Color>[
+              const Color.fromRGBO(2, 20, 140, 0.1),
+              const Color.fromRGBO(0, 0, 160, 0.0)
+            ],
+          ),
+          borderRadius: BorderRadius.circular(20.0),
+          boxShadow: [
+            BoxShadow(
+              color: const Color.fromRGBO(0, 0, 0, 0.3),
+              offset: Offset(0, 2),
+              blurRadius: 4,
+            ),
+            BoxShadow(
+              color: const Color.fromRGBO(0, 0, 0, 0.3),
+              offset: Offset(0, 6),
+              blurRadius: 20,
+            ),
           ],
         ),
-        borderRadius: BorderRadius.circular(20.0),
-        boxShadow: [
-          BoxShadow(
-            color: const Color.fromRGBO(0, 0, 0, 0.3),
-            offset: Offset(0, 2),
-            blurRadius: 4,
-          ),
-          BoxShadow(
-            color: const Color.fromRGBO(0, 0, 0, 0.3),
-            offset: Offset(0, 6),
-            blurRadius: 20,
-          ),
-        ],
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          SizedBox(height: 5.0),
-          CircleAvatar(
-            backgroundColor: Colors.purple,
-            radius: 35.0,
-            child: Icon(
-              Icons.swap_calls,
-              color: Colors.white,
-              size: 30.0,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20.0),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 8.0, sigmaY: 8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SizedBox(height: 5.0),
+                CircleAvatar(
+                  backgroundColor: color,
+                  radius: 35.0,
+                  child: Icon(
+                    icono,
+                    color: Colors.white,
+                    size: 30.0,
+                  ),
+                ),
+                Text(
+                  texto,
+                  style: TextStyle(color: color),
+                ),
+                SizedBox(height: 5.0)
+              ],
             ),
           ),
-          Text(
-            'data',
-            style: TextStyle(color: Colors.purple),
-          ),
-          SizedBox(height: 5.0)
-        ],
-      ),
-    );
+        ));
   }
 //=================== ↑↑ cajas del body ↑↑ ====================
 }
