@@ -1,23 +1,23 @@
-# Diseño:
+# Design:
 
-un proyecto de flutter para aprender a diseñar apps.
+  a project of flutter for learn & design apps.
 
-# verciones:
-0.01 pagina básica para iniciar el proyecto.
+# Versions:
+  
+  0.01 basic page for launch the project.
 
 # Notas:
+  I made this project with the intention of working in the sector of mobile development & not work (XD)... but I discover a beautifull world of Dart & I am learning a  lot.
+  
 
-si hay errores en la compilacion o renderizacion los pondre en la seccion de bugs.
-
-## Bugs
 
 ## Flutter
 
-Si quieres saber más de flutter:
+If you need know more of flutter:
 
-- [Lab: Escribe tu primera App con Flutter](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Muestras útiles de Flutter](https://flutter.dev/docs/cookbook)
+- [Lab: write you first App with Flutter](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: useful samples of Flutter](https://flutter.dev/docs/cookbook)
 
-para obtener ayuda de como comenzar con Flutter, Consultar:
-[documentación online](https://flutter.dev/docs), ofrece tutoriales,
-ejemplos, orientación sobre desarrollo móvil y una referencia completa de la API.
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
