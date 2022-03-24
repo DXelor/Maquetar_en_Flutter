@@ -7,7 +7,7 @@
   0.01 basic page for launch the project.
 
 # Notas:
-  I made this project with the intention of working in the sector of mobile development & not work (XD)... but I discover a beautifull world of Dart & I am learning a  lot.
+  I made this project with the intention of working in the sector of mobile development & don't work (XD)... but I discover a beautifull world of Dart & I am learning a  lot.
   
 
 
